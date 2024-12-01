@@ -22,7 +22,7 @@ function _page($$payload, $$props) {
   {
     $$payload.out += "<!--[!-->";
   }
-  $$payload.out += `<!--]--></main>`;
+  $$payload.out += `<!--]--></main> //Katze kaufen`;
   if ($$store_subs) unsubscribe_stores($$store_subs);
   pop();
 }

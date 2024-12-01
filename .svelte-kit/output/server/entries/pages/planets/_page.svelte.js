@@ -5,7 +5,7 @@ function _page($$payload) {
   var $$store_subs;
   let isLoggedIn;
   isLoggedIn = store_get($$store_subs ??= {}, "$loggedInUser", loggedInUser) !== null;
-  $$payload.out += `<main class="svelte-19uln9q"><h1>`;
+  $$payload.out += `<main class="svelte-9lgsjg"><h1>`;
   if (isLoggedIn) {
     $$payload.out += "<!--[-->";
     $$payload.out += `Which planet should we visit, Master ${escape_html(store_get($$store_subs ??= {}, "$loggedInUser", loggedInUser))}!`;
@@ -13,19 +13,23 @@ function _page($$payload) {
     $$payload.out += "<!--[!-->";
     $$payload.out += `Star Wars Planets`;
   }
-  $$payload.out += `<!--]--></h1> <a href="/" class="back-button svelte-19uln9q">Back to Home</a> `;
+  $$payload.out += `<!--]--></h1> <a href="/" class="back-button svelte-9lgsjg">Back to Home</a> `;
   if (store_get($$store_subs ??= {}, "$loading", loading)) {
     $$payload.out += "<!--[-->";
     $$payload.out += `<p>Loading planet data...</p>`;
   } else {
     $$payload.out += "<!--[!-->";
     const each_array = ensure_array_like(store_get($$store_subs ??= {}, "$planets", planets));
-    $$payload.out += `<ul class="svelte-19uln9q"><!--[-->`;
+    $$payload.out += `<ul class="svelte-9lgsjg"><!--[-->`;
     for (let $$index = 0, $$length = each_array.length; $$index < $$length; $$index++) {
       let planet = each_array[$$index];
-      $$payload.out += `<li class="svelte-19uln9q">${escape_html(planet.name)}</li>`;
+      $$payload.out += `<li class="svelte-9lgsjg">${escape_html(planet.name)}</li>`;
     }
     $$payload.out += `<!--]--></ul>`;
+  }
+  $$payload.out += `<!--]--> `;
+  {
+    $$payload.out += "<!--[!-->";
   }
   $$payload.out += `<!--]--></main>`;
   if ($$store_subs) unsubscribe_stores($$store_subs);
